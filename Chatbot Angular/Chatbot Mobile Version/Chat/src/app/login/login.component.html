@@ -1,0 +1,18 @@
+<div id="MainContainer">
+    <div id="LoginContainer">
+        <img src="./assets/Images/Logo2.png" id="logo">
+        <h1>CONNECTER</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <input placeholder="Nom d'utilisateur" id="username" type="text" [disabled]="loading" maxlength="50"
+                formControlName="username" matInput required>
+            <input placeholder="Mot de passe" id="password" type="password" [disabled]="loading"
+                formControlName="password" matInput required>
+            <button type="submit" id="signIn" [disabled]="loginForm.invalid">
+                <span *ngIf="!loading">Connecter</span>
+                <div id="loader" align="center">
+                    <mat-spinner *ngIf="loading" [diameter]="20"></mat-spinner>
+                </div>
+            </button>
+        </form>
+    </div>
+</div>

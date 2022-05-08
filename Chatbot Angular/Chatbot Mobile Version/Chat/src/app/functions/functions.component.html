@@ -1,0 +1,62 @@
+<div id="Header">
+  <div id="HeaderTitle">
+    <h1>Fonctions</h1>
+  </div>
+  <div id="HeaderContent">
+    <button id="addBtn" mat-stroked-button color="primary"
+      (click)="openAddFunctionDialog()">
+      <span style="margin-right: 0.5vw;" class="material-icons">
+        add_to_photos
+      </span>
+    </button>
+  </div>
+</div>
+<div id="MainContainer">
+    <div id="filter" [ngClass]="tableLoaded?'displayed':'notDisplayed'">
+      <span id="filterIcon" class="material-icons-outlined">search</span>
+      <input id="filterInput" placeholder="Chercher..." type="text" matInput (keyup)="applyFilter($event)" #input
+        [(ngModel)]="value">
+  </div>
+  <table [ngClass]="tableLoaded?'displayed':'notDisplayed'" mat-table [dataSource]="dataSource" id="table" matSort>
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Titre</th>
+      <td (click)="openFunctionDetailsDialog(row)" mat-cell *matCellDef="let row"> {{row.title}} </td>
+    </ng-container>
+    <!-- Permission Column -->
+    <ng-container matColumnDef="permissionId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Permission</th>
+      <td (click)="openFunctionDetailsDialog(row)" mat-cell *matCellDef="let row"> {{getPermission(row.permissionId)}}
+      </td>
+    </ng-container>
+    <!--Action Column-->
+    <!--<ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let row" id="classBtns">
+        <button (click)="openEditFunctionDialog(row)" color="accent" mat-icon-button aria-label="Modifier"
+          id="editUser">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <button (click)="openDeleteFunctionDialog(row)" color="warn" mat-icon-button aria-label="Supprimer"
+          id="deleteUser">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>-->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">Aucune donnée correspondant au filtre "{{input.value}}"</td>
+    </tr>
+  </table>
+
+  <mat-paginator [ngClass]="tableLoaded?'displayed':'notDisplayed'" [pageSizeOptions]="[5, 10, 25, 100]"
+    showFirstLastButtons id="paginator"></mat-paginator>
+
+  <mat-progress-bar id="loader" *ngIf="!tableLoaded" mode="indeterminate"></mat-progress-bar>
+
+
+</div>

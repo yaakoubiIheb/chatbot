@@ -1,0 +1,9 @@
+<div id="MainContainer">
+    <h1>Supprimer Fonction</h1>
+    <p>Etes-vous sûr de vouloir supprimer cette fonction et tous les utilisateurs qui lui appartiennent?</p>
+    <div id="btns">
+        <button mat-dialog-close mat-stroked-button color="basic">Annuler</button>
+        <button mat-dialog-close (click)="deleteFunction(data.function)" mat-stroked-button color="warn">Supprimer</button>
+    </div>
+</div>
+<app-loading-screen *ngIf="loading"></app-loading-screen>

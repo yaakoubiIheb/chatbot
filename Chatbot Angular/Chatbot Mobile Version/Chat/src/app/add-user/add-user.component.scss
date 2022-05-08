@@ -1,0 +1,83 @@
+*{box-sizing: border-box;font-size: small;}
+#MainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+    height: fit-content;
+    width: 100vw;
+    padding-top: 5vh;
+   
+}
+#Header{
+    width: 100vw;
+    height: 8vh;
+    padding: 0 2vw 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top:0;
+    border-bottom: 1px solid whitesmoke;
+    background-color: white;
+    z-index: +2;
+
+}
+.mat-paginator-container{
+    display: initial !important;
+}
+#HeaderTitle h1{
+    font-weight: 500 !important;
+    margin : 0;
+    color:#3a3a3a;
+    font-size: 15px;
+    margin-left: 18vw;
+}
+#HeaderContent{
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+.row{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 1vh;
+}
+.row mat-form-field{
+    width:100%;
+}
+.row button{
+    margin-right: 1vw;
+    width:100%;
+}
+.row input:hover{
+    outline: none !important;
+}
+mat-form-field{
+    margin-right: 0.5vw;
+    margin-left: 0.5vw;
+}
+#title{
+    width: 100%;
+    margin-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(231, 231, 231);
+}
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: rgba(grey, 0.75) !important;
+  }

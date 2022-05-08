@@ -1,0 +1,71 @@
+<div id="Header">
+  <div id="HeaderTitle">
+    <h1>Modifier utilisateur</h1>
+  </div>
+  <div id="HeaderContent">
+    <button id="addBtn"  color="warn" mat-stroked-button
+    [routerLink]="['/utilisateurs']">
+      <span style="margin-right: 0.5vw;" class="material-icons">
+        keyboard_return
+      </span>
+    </button>
+  </div>
+</div>
+<div id="MainContainer">
+  <form class="example-form" [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Nom d'utilisateur</mat-label>
+        <input type="text" matInput placeholder="Ex. JohnDoe" formControlName="username" maxlength="50" required>
+        <mat-hint *ngIf="usernameExist">Nom d'utilisateur existe déjà</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input type="text" matInput placeholder="Ex. Doe" formControlName="name" required maxlength="50">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Prènom</mat-label>
+        <input type="text" matInput placeholder="Ex. John" formControlName="lastname" required maxlength="50">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Adresse</mat-label>
+        <input type="text" matInput placeholder="Ex. Tunis" formControlName="address" maxlength="50">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input type="email" matInput placeholder="Ex. JohnDoe@gmail.com" formControlName="email"
+          pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Numero de téléphone</mat-label>
+        <input type="number" matInput placeholder="Ex. 25800016" formControlName="telephoneNum">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Mot de passe</mat-label>
+        <input type="password" matInput maxlength="50" minlength="5" formControlName="password" required>
+        <mat-hint *ngIf="editUserForm.get('password').errors?.minlength">la longueur du mot de passe doit être supérieure à 5</mat-hint>              
+      </mat-form-field>
+
+      <mat-form-field  class="example-full-width" appearance="outline">
+        <mat-label>Répéter mot de passe</mat-label>
+        <input type="password" matInput maxlength="50" minlength="5" formControlName="passwordRepeat" required>
+        <mat-hint *ngIf="editUserForm.controls.passwordRepeat.errors?.confirmedValidator">Mot de passe incorrect
+        </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fonction</mat-label>
+        <mat-select name="fonction" formControlName="function" required>
+          <mat-option *ngFor="let f of functions" [value]="f.id">
+            {{f.title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button type="submit" style="margin-bottom: 2vh;width: 80%;" id="addBtn" mat-raised-button color="primary"
+        [disabled]="editUserForm.invalid">MODIFIER</button>
+  </form>
+</div>
+<app-loading-screen *ngIf="loading"></app-loading-screen>

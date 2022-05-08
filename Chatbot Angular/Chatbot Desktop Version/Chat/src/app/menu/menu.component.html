@@ -1,0 +1,52 @@
+<!--<img id="BackgroundImage" src="../../assets/Images/Background3.jpg">-->
+<div id="MainContainer" *ngIf="permission && user">
+        <div id="logo">R<span style="color:#6F7FDC">o</span>bin
+                <!--<img src="../../assets/Images/Logo1.png" style="width: 10vmax;">-->
+        </div>
+        <div id="navElements">
+                <div>
+                <a mat-ripple routerLinkActive="active" matTooltip="Communiquer avec le chatobot"
+                        [routerLink]="['/robin']"><span
+                                class="material-icons-outlined icon">chat</span><span>Chatbot</span></a>
+                <a mat-ripple routerLinkActive="active" matTooltip="Tâches exécutées" [routerLink]="['/taches']"><span
+                                class="material-icons-outlined icon">task</span><span>Tâches</span></a>
+                <a mat-ripple routerLinkActive="active" matTooltip="Gérer les règles d'utilisation du chatbot"
+                        *ngIf="permission.title == 'Gerer les regles' || permission.title == 'Gerer les regles et consulter historique' || user.userType == 'Administrateur'"
+                        [routerLink]="['/regles']"><span
+                                class="material-icons-outlined icon">checklist_rtl</span><span>Règles
+                                d'utilisation</span></a>
+                <a mat-ripple routerLinkActive="active" matTooltip="Gérer les utilisateurs"
+                        [routerLink]="['/utilisateurs']" *ngIf="user.userType == 'Administrateur'"><span
+                                class="material-icons-outlined icon">badge</span><span>Utilisateurs</span></a>
+                <a mat-ripple routerLinkActive="active" matTooltip="Gérer les fonctions des utilisateurs"
+                        [routerLink]="['/roles']" *ngIf="user.userType == 'Administrateur'"><span
+                                class="material-icons-outlined icon">manage_accounts</span><span>Roles des
+                                utilisateurs</span></a>
+                <a mat-ripple routerLinkActive="active" matTooltip="Historique des utilisateurs"
+                        [routerLink]="['/historique']"
+                        *ngIf="permission.title == 'Consulter historique' || permission.title == 'Gerer les regles et consulter historique' || user.userType == 'Administrateur'"><span
+                                class="material-icons-outlined icon">history</span><span>Historique</span></a>
+                <a mat-ripple routerLinkActive="active" matTooltip="Historique personnelle"
+                        [routerLink]="['/historique utilisateur']"
+                        *ngIf="permission.title == 'Gerer les regles' || permission.title == 'Aucune Autorisation'"><span
+                                class="material-icons-outlined icon">history</span><span>Historique</span></a>
+                <a mat-ripple routerLinkActive="active" matTooltip="Statistiques de chatbot"
+                        [routerLink]="['/statistiques']" *ngIf="user.userType == 'Administrateur'"><span
+                                class="material-icons-outlined icon">trending_up</span><span>Statistiques de
+                                chatbot</span></a>
+                </div>
+
+                <div>
+                        <div id="User">
+                                <div id="UserImage">{{user.username[0].toUpperCase()}}<div id="active"></div>
+                                </div>
+                                <div id="UserInfo">
+                                        <span>{{user.name}} {{user.lastname}}</span>
+                                </div>
+                        </div>
+                        <a mat-ripple [routerLink]="['/connecter']" (click)="signOut()"><span
+                                        class="material-icons-outlined icon">login</span><span>Déconnecter</span></a>
+                </div>
+                <!--<a routerLinkActive="active" [routerLink]="['/connecter']">Déconnecter</a>-->
+        </div>
+</div>

@@ -1,0 +1,47 @@
+<div id="Header">
+    <div id="HeaderTitle">
+      <h1>Détails utilisateur</h1>
+    </div>
+    <div id="HeaderContent">
+      <button id="addBtn"  color="warn" mat-stroked-button
+      [routerLink]="['/utilisateurs']">
+        <span style="margin-right: 0.5vw;" class="material-icons">
+          keyboard_return
+        </span>
+      </button>
+    </div>
+  </div>
+<div *ngIf="user" id="MainContainer">
+  <div>
+    <div id="title">
+        <div [ngStyle]="{backgroundColor:avatarColor}" id="UserImage">{{user.username[0].toUpperCase()}}</div>
+        <h1>{{user.username}}</h1>
+    </div>
+    <table>
+        <tr>
+            <th>Nom & Prènom</th>
+            <td>{{user.name}}&nbsp;{{user.lastname}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{user.email}}</td>
+        </tr>
+        <tr>
+            <th>Adresse</th>
+            <td>{{user.address}}</td>
+        </tr>
+        <tr>
+            <th>Téléphone</th>
+            <td>{{user.telephoneNum}}</td>
+        </tr>
+        <tr *ngIf="function">
+            <th>Fonction</th>
+            <td>{{function.title}}</td>
+        </tr>
+    </table>
+    <div id="footer">
+        <div mat-ripple mat-dialog-close [routerLink]="['/modifier utilisateur',user.username]" id="update"><mat-icon>settings</mat-icon></div>
+        <div mat-ripple mat-dialog-close (click)="openDeleteUserDialog(user)" id="delete"><mat-icon>delete</mat-icon></div>
+      </div>
+    </div>
+</div>

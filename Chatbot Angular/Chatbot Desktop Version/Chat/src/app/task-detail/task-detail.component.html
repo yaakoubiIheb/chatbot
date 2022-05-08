@@ -1,0 +1,70 @@
+<div id="MainContainer">
+  <h1 *ngIf="result.responseType == 'statistique'">Statistique</h1>
+  <h1 *ngIf="result.responseType == 'matrice'">Matrice</h1>
+  <!--------------Statistique--------------->
+  <div id="ChartContainer" *ngIf="result.responseType == 'statistique'">
+    <canvas #chart id="Chart" baseChart [datasets]="result.data.dataSets" [labels]="result.data.labels"
+      [colors]="result.data.colors" [options]="result.data.options" [chartType]="result.data.type">
+    </canvas>
+  </div>
+  <div id="footer" *ngIf="result.responseType == 'statistique'">
+    <a (click)="exportImage()" target="_self" [href]="imageLink" download="chart.png"><button id="exportImage"
+        mat-raised-button>
+        <mat-icon class="action" style="margin-right: 0.5vw;">
+          image</mat-icon>
+        Image
+      </button></a>
+  </div>
+  <!--------------Table--------------->
+  <div #matrice id="Table" *ngIf="result.responseType == 'matrice' && isArray">
+    <div id="filter">
+      <input id="filterInput" (keyup)="applyFilter($event)" #input [(ngModel)]="value" placeholder="Chercher"
+        type="text">
+      <span id="filterIcon" class="material-icons-outlined">search</span>
+    </div>
+    <table mat-table [dataSource]="dataSource" id="table" *ngIf="result.responseType == 'matrice' && isArray" matSort>
+      <!-- index Column -->
+      <ng-container matColumnDef="index">
+        <th mat-header-cell *matHeaderCellDef>Num°</th>
+        <td mat-cell *matCellDef="let row;let i =index"> {{i+1}} </td>
+      </ng-container>
+
+      <div *ngFor="let k of keys">
+        <ng-container [matColumnDef]="k">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{k}}</th>
+          <td mat-cell *matCellDef="let row;let i = index">{{row[k]}}</td>
+        </ng-container>
+      </div>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">Aucune donnée correspondant au filtre "{{input.value}}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons id="paginator"></mat-paginator>
+  </div>
+  <!--------------------------Rows--------------------->
+  <div #matrice id="columnsContainer" *ngIf="result.responseType == 'matrice' && !isArray">
+    <div class="column" *ngFor="let d of info;let i = index">
+      <div class="columnTitle">{{keys[i]}}</div>
+      <h3 class="columnInfo">{{d}}</h3>
+    </div>
+  </div>
+
+  <div id="footer" *ngIf="result.responseType == 'matrice'">
+    <a (click)="exportPdf()"><button id="exportPdf"
+        mat-raised-button>
+        <mat-icon class="action" style="margin-right: 0.5vw;">picture_as_pdf</mat-icon>
+        Pdf
+      </button></a>
+      <a (click)="exportExcel()"><button id="exportExcel"
+        mat-raised-button>
+        <img src="../../assets/Images/ExcelIcon.png" style="width: 2vw;filter: brightness(0) invert(1);margin-right: 0.5vw;">
+        Excel
+      </button></a>
+  </div>
+</div>

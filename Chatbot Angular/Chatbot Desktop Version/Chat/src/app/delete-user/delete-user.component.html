@@ -1,0 +1,9 @@
+<div id="MainContainer">
+    <h1>Supprimer Utilisateur</h1>
+    <p>Etes-vous sûr de vouloir supprimer cet utilisateur?</p>
+    <div id="btns">
+        <button mat-dialog-close mat-stroked-button color="basic">Annuler</button>
+        <button (click)="deleteUser(data.user)" mat-stroked-button color="warn">Supprimer</button>
+    </div>
+</div>
+<app-loading-screen *ngIf="loading"></app-loading-screen>

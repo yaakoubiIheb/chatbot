@@ -1,0 +1,67 @@
+<div id="Header">
+    <div id="HeaderTitle">
+        <h1>Historique</h1>
+    </div>
+    <div id="HeaderContent">
+    </div>
+</div>
+<div id="MainContainer">
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Messages">
+            <div id="historyContainer">
+                <mat-progress-bar *ngIf="loading" id="loader" mode="indeterminate"></mat-progress-bar>
+                <div style="display: flex;width: 100%;justify-content: space-between;align-items: center;">
+                    <h2>Messages</h2>
+                </div>
+                <h1 id="noMessages" *ngIf="!loading&&history&&history.length == 0">Pas de messages</h1>
+                <ng-container *ngIf="history">
+                    <div *ngFor="let h of history" class="history">
+                        <div class="userHistory">
+                            <span>{{signedInUser.username}}</span>
+                            <mat-icon class="action" style="color:rgb(138, 138, 138)" [matMenuTriggerFor]="actionMenu" aria-hidden="false">more_horiz</mat-icon>
+                            <mat-menu #actionMenu="matMenu">
+                                <button (click)="pinRule(h.ruleTitle)" mat-menu-item>
+                                    <mat-icon>push_pin</mat-icon>
+                                    <span>Epingler régle</span>
+                                </button>
+                                <button *ngIf="signedInUserPermission.title == 'Gerer les regles'" (click)="openRuleDetailsDialog(h.ruleTitle)" mat-menu-item>
+                                    <mat-icon>visibility</mat-icon>
+                                    <span>Consulter régle</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                        <span class="message">message : {{h.message}}</span>
+                        <span class="ruleTitle">Titre de la règle d'utilisation : {{h.ruleTitle}}</span>
+                        <span class="historyDate">{{h.date}}</span>
+                    </div>
+                </ng-container>
+            </div>
+        </mat-tab>
+        <mat-tab label="Date">
+            <div id="calender">
+                <div id="monthYear">
+                    <mat-form-field id="month">
+                        <mat-select (selectionChange)="getDaysInMonth(selectedMonth,selectedYear);getUserHistory(signedInUser.id)" [(ngModel)]="selectedMonth">
+                            <mat-option *ngFor="let m of months;let i = index" [value]="m.number">{{m.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field id="year">
+                        <mat-select (selectionChange)="getDaysInMonth(selectedMonth,selectedYear);getUserHistory(signedInUser.id)" [(ngModel)]="selectedYear">
+                            <mat-option value="2021">2021</mat-option>
+                            <mat-option value="2020">2020</mat-option>
+                            <mat-option value="2019">2019</mat-option>
+                            <mat-option value="2018">2018</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div id="days">
+                    <div mat-ripple class="day" *ngFor="let d of daysChar;let i = index"
+                        [ngClass]="daysNum[i] == selectedDay?'selectedDay':'notSelected'" (click)="selectDay(daysNum[i]);getUserHistory(signedInUser.id)">
+                        <span class="dayChar">{{d}}</span>
+                        <span class="dayNum">{{daysNum[i]}}</span>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

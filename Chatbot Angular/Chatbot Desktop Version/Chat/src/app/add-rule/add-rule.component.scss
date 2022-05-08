@@ -1,0 +1,237 @@
+*{
+    box-sizing: border-box;
+}
+#Header{
+    margin-left: 20vw;
+    width: 80vw;
+    height: 8vh;
+    padding: 0 2vw 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top:0;
+    border-bottom: 1px solid whitesmoke;
+    background-color: white;
+    z-index: +2;
+
+}
+h1{
+    font-weight: 500 !important;
+    margin : 0;
+    color:#3a3a3a;
+    font-size: 20px;
+    align-self: flex-start;
+}
+#MainContainer{
+    margin-left: 20vw;
+    width: 80vw;
+    height: fit-content;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw;
+}
+.mat-dialog-content{
+    height: fit-content !important;
+    max-height: none !important;
+}
+
+#FunctionsContainer{
+    height: 50%;
+    max-height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1vw;
+    padding-bottom: 0;
+}
+#Functions{
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    padding: 1vh;
+}
+
+#optionsTitle{
+    font-weight: bold;
+    color: rgb(92, 92, 92);
+}
+#optionsBtn{
+    width: 5vw;
+}
+.options{
+    margin-left: 10vw;
+}
+#loader{
+    position : fixed;
+    width: 15%;
+    align-self: center;
+    top:50%
+}
+fieldset{
+    margin-bottom: 3vh;
+    border-radius: 5px;
+    width: 100%;
+    color:rgb(121, 121, 121);
+    border: 1px solid rgb(233, 233, 233);
+}
+mat-horizontal-stepper {
+    background-color: transparent;
+    width: 100%;
+    height: fit-content;
+    border-radius: 5px;
+    overflow-y: visible;
+}
+::ng-deep .mat-step-header:focus{
+    background-color: transparent;
+}
+::ng-deep .mat-step-header:hover{
+    background-color: transparent;
+}
+#firstFormInputs{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+mat-form-field{
+    width: 100%;
+}
+
+.removeIcon{
+    color: rgb(206, 43, 43);
+    font-size: 1.5vmax;
+    margin-bottom: 2vh;
+}
+.removeIcon:hover{
+    cursor: pointer;
+}
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.row mat-form-field {
+    margin-left: 0.5vh;
+    margin-right: 0.5vh;
+}
+::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+}
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+    box-shadow: none;
+    background-color: transparent;
+}
+#addRuleBtn{
+    margin-top: 3vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    margin-bottom: 2vh;
+    width: 40%;
+}
+.notDisplayed{
+    display: none;
+}
+.displayed{
+}
+#apiType mat-form-field{
+    width: 45%;
+}
+.steppers{
+    position: sticky !important;
+    bottom: 0 !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5vw;
+}
+
+form::-webkit-scrollbar {
+    width: 9px;
+    height : 9px;
+}
+form::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 20px;
+}
+form::-webkit-scrollbar-thumb {
+    background-color: rgb(175, 175, 175);
+    border-radius: 20px;
+    border: 3px solid rgb(175, 175, 175);
+}
+.addBtn{
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+table{
+    background-color: transparent;
+    width: 100%;
+    box-shadow: none;
+}
+#tableContainer{
+    box-shadow: none;
+    max-height: 27vh;
+    overflow-y: auto;
+}
+#filter{
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 6vh;
+    padding-left: 1vh;
+    color: rgb(143, 143, 143);
+    background-color:whitesmoke;
+    border-radius: 4px;
+    padding: 0.5vw;
+    top: 0;
+    position: sticky;
+}
+
+#filterInput{
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+    margin-left: 1vw;
+    width: 100%;
+    height: 100%;
+    color: rgba(56, 56, 56, 0.603);
+}
+tr{
+    transition: all 0.2s ease-in-out;
+}
+tr:hover{
+    cursor: pointer;
+}
+::ng-deep mat-dialog-container{
+    padding:0 !important;
+}
+#cancel{
+    border-radius: 5px;
+    padding-top: 0.3vh;
+    padding-bottom: 0.3vh;
+    width: 20vw;
+    overflow: hidden;
+}
+.validator{
+    color: #868686;
+    margin-right: 5vw;
+}
+#validation .row{
+    margin-bottom: 3vh;
+    //border-bottom: 1px solid rgb(202, 202, 202);
+}
+#validation{
+    font-size: large;
+    align-self: center;
+}

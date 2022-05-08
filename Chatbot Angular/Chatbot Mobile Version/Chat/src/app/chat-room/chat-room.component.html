@@ -1,0 +1,134 @@
+<div id="Header">
+    <div id="HeaderTitle">
+        <h1>Chatbot</h1>
+    </div>
+    <div id="HeaderContent">
+    </div>
+</div>
+<div id="MainContainer">
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Chatbot">
+            <div id="chatboard">
+                <div id="chatSpaceContainer" #chatSpaceContainer>
+                    <div id="chatSpace" #chatSpace>
+                        <ng-container *ngFor="let m of messages; let i=index">
+                            <div *ngIf="m.sender == 'user'" class="user">
+                                <div>
+                                    <div class="userMessages messages">{{m.message}}</div>
+                                </div>
+                            </div>
+                            <div *ngIf="m.sender == 'chatbot'" class="chatbot">
+                                <div style="display: flex;justify-content: center;align-items: center;">
+                                    <div *ngIf="m.type != 'option' && m.sender == 'chatbot'" class="chatbotMessages messages">
+                                        {{m.message}}</div>
+                                    <div *ngIf="m.type == 'option'" class="options messages"
+                                        (click)="addAttribute(m.message,m.optionValue)">{{m.message}}</div>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <!------End Multiple------>
+                        <div *ngIf="inMultipleMessages" class="endMultiple messages"
+                            (click)="nextSequenceMessage();inMultipleMessages = false">Terminer Saisie</div>
+                        <!------//End Multiple------>
+                        <div id="ruleIndicator" *ngIf="inSequence">
+                            <span>Régle : {{this.rule.tag}}</span>
+                            <span class="material-icons close" matRipple
+                                (click)="inSequence = false;resetChatbot()">close</span>
+                        </div>
+                        <!--Typing Animation-->
+                        <div *ngIf="loading" class="chatbotMessages messages typing">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <!--/Typing Animation-->
+                    </div>
+                </div>
+                <div id="messageInput">
+                    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                        <input [matAutocomplete]="auto" list="filteredRules" (keyup)="autocomplete(form)"
+                            [disabled]="loading || inputDisable" *ngIf="inputType != 'dateRange' && inputType != 'date'"
+                            [type]="inputType" id="message" [maxlength]="inputMaxLength" [max]="inputMaxNumber"
+                            [pattern]="inputPattern" name="message" placeholder="Taper un message..." ngModel>
+                        <datalist id="filteredRules">
+                            <option *ngFor="let r of filteredRules" [value]="r.triggers[0].message">
+                                <img src="../../assets/Images/Logo2.png">
+                                <span style="color:red">{{r.title}}</span>
+                            </option>
+                        </datalist>
+                        <!-------------------Date Range------------------------->
+                        <div *ngIf="inputType == 'dateRange'" id="date">
+                            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                                <input matStartDate formControlName="start" placeholder="Date de début" />
+                                <input matEndDate formControlName="end" placeholder="Date de fin" />
+                            </mat-date-range-input>
+                            <mat-datepicker-toggle matSuffix [for]="picker">
+                            </mat-datepicker-toggle>
+                            <mat-date-range-picker #picker></mat-date-range-picker>
+                        </div>
+                        <!-------------------/Date Range------------------------->
+                        <!-----------------------Date--------------------------->
+                        <div id="date" *ngIf="inputType == 'date'">
+                            <input id="message" name="message" matInput disabled [matDatepicker]="picker" placeholder="Date"
+                                ngModel>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker disabled="false"></mat-datepicker>
+                        </div>
+                        <!-----------------------/Date--------------------------->
+                        <!--<button [disabled]="form.invalid" mat-ripple id="sendBtn" style="color: #6F7FDC;" mat-icon-button
+                            type="submit">
+                            <mat-icon>send</mat-icon>
+                        </button>-->
+                    </form>
+                    <mat-hint *ngIf="form.invalid && inputType=='email'" class="errorMessage">Format e-mail invalide!</mat-hint>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Règles épinglées">
+            <div id="rules">
+                <h2 *ngIf="localRules">Règles épinglées</h2>
+                <h1 *ngIf="!localRules || localRules.length == 0" id="noPinnedRules">Epingler des régles</h1>
+                <div *ngFor="let r of localRules" class="rule">
+                    <div class="title">
+                        <span>{{r.rule.title}}</span>
+                        <mat-icon class="action" style="color:rgb(138, 138, 138)" [matMenuTriggerFor]="actionMenu"
+                            aria-hidden="false">more_horiz</mat-icon>
+                        <mat-menu #actionMenu="matMenu">
+                            <button (click)="executeRule(r.rule.triggers[0].message)" mat-menu-item>
+                                <mat-icon>fast_forward</mat-icon>
+                                <span>Exécuter</span>
+                            </button>
+                            <button
+                                *ngIf="signedInUser.userType == 'Administrateur' || signedInUserPermission.title == 'Gerer les regles et consulter historique' ||  signedInUserPermission.title == 'Gerer les regles'"
+                                (click)="openDetailsDialog(r.rule.title,r.rule.ruleType)" mat-menu-item>
+                                <mat-icon>visibility</mat-icon>
+                                <span>Consulter</span>
+                            </button>
+                            <button (click)="removePinnedRule(r.rule.title,signedInUser.username)" mat-menu-item>
+                                <mat-icon>highlight_off</mat-icon>
+                                <span>Retirer de la liste
+                                </span>
+                            </button>
+                        </mat-menu>
+                    </div>
+                    <span class="description">{{r.rule.description}}</span>
+                    <span [ngClass]="r.rule.ruleType=='Conversation'?'conversationRow':'taskRow'">{{r.rule.ruleType}}</span>
+                </div>
+            </div>
+        </mat-tab>
+      </mat-tab-group>
+</div>
+<!------------Autocomplete----------->
+<mat-autocomplete #auto="matAutocomplete">
+    <ng-container *ngIf="form.value['message'] && !inSequence">
+        <mat-option style="height: fit-content !important;" *ngFor="let r of rules" [value]="r.triggers[0].message">
+            <div class="autocompleteTitle">{{r.title}}</div>
+            <div class="autocompleteDescription"><span>{{r.description}}</span></div>
+            <div [ngClass]="r.ruleType=='Conversation'?'autocompleteConversation':'autocompleteTask'">{{r.ruleType}}
+            </div>
+        </mat-option>
+    </ng-container>
+</mat-autocomplete>
+<!--<div matRipple id="openChat" [ngStyle]="{right:openChatRight}" (click)="getChatBottom()">
+    <img src="../../assets/Images/AddTasks.png">
+</div>-->

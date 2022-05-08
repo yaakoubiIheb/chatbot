@@ -1,0 +1,109 @@
+
+    "intents": [
+        {
+            "tag": "salutation",
+            "trigger": [
+                "Bonjour",
+                "Y a-t-il quelqu'un?",
+                "Bonne journée",
+                "salut"
+            ],
+            "responses": [
+                "Bonjour",
+                "Ravi de vous revoir",
+                "Bonjour, comment puis-je vous aider?"
+            ],
+            "type": "conversation",
+            "methode": "",
+            "api": "",
+            "typeReponse": "message",
+            "sequence": []
+        },
+        {
+            "tag": "merci",
+            "trigger": [
+                "Merci",
+                "C'est utile",
+                "Génial, merci",
+                "Merci de m'aider"
+            ],
+            "responses": [
+                "Heureux de vous aider!",
+                "À tout moment!",
+                "Avec plaisir"
+            ],
+            "type": "conversation",
+            "methode": "",
+            "api": "",
+            "typeReponse": "message",
+            "sequence": []
+        },
+        {
+            "tag": "pas de reponse",
+            "trigger": [
+                ""
+            ],
+            "responses": [
+                "Désolé, je ne vous comprends pas, veuillez contacter le responsable pour ajouter cette fonctionnalité",
+                "Veuillez me donner plus d'informations, veuillez contacter le responsable pour ajouter cette fonctionnalité",
+                "Je ne suis pas sûr de comprendre, veuillez contacter le responsable pour ajouter cette fonctionnalité"
+            ],
+            "type": "conversation",
+            "methode": "",
+            "api": "",
+            "typeReponse": "message",
+            "sequence": []
+        },
+        {
+            "tag": "au revoir",
+            "trigger": [
+                "Bye",
+                "À plus tard",
+                "À la prochaine fois"
+            ],
+            "responses": [
+                "A bientôt!",
+                "Passez une bonne journée",
+                "Au revoir! Revenez bientôt."
+            ],
+            "type": "conversation",
+            "methode": "",
+            "api": "",
+            "typeReponse": "message",
+            "sequence": []
+        },
+        {
+            "tag": "options",
+            "trigger": [
+                "Comment pouvez-vous m'aider?",
+                "Que pouvez-vous faire?",
+                "Quelle aide vous apportez?",
+                "Comment pouvez-vous être utile?",
+                "C'est quoi ton role ?"
+            ],
+            "responses": [
+                "je peux vous aider à communiquer avec la base de données",
+                "mon rôle est de remplacer les anciennes méthodes ennuyeuses pour manipuler votre base de données"
+            ],
+            "type": "conversation",
+            "methode": "",
+            "api": "",
+            "typeReponse": "message",
+            "sequence": []
+        },
+        {
+            "tag": "bonsoir",
+            "trigger": [
+                "bonsoir"
+            ],
+            "responses": [
+                "bonsoir"
+            ],
+            "type": "conversation",
+            "methode": "",
+            "api": "",
+            "typeReponse": "message",
+            "sequence": []
+        }
+    ]
+}

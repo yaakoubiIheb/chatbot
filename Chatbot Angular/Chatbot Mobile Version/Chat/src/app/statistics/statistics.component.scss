@@ -1,0 +1,175 @@
+*{box-sizing: border-box !important;font-size: small;}
+#Header{
+    width: 100vw;
+    height: 8vh;
+    padding: 0 2vw 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top:0;
+    border-bottom: 1px solid whitesmoke;
+    background-color: white;
+    z-index: +2;
+
+}
+#HeaderTitle h1{
+    font-weight: 500 !important;
+    margin : 0;
+    color:#3a3a3a;
+    font-size: 15px;
+    margin-left: 18vw;
+}
+#HeaderContent{
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#MainContainer{
+    width: 100vw;
+    min-height: 92vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+    padding: 1vw;
+}
+#Dashboard{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.dashboardElement{
+    min-width: 150px;
+    height: 15vh;
+    width: 90vw;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 2px 0 rgb(0 0 0 / 5%);
+    background-color: white;
+    padding: 5vw;
+    border-radius: 10px;
+}
+.statIcon{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 1.2vmax;
+}
+.statIcon mat-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    
+}
+.dashboradDetails{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-left: 2vw;
+    height: 100%;
+}
+.dashboardNumber{
+    font-size: 30px;
+    font-weight: 500;
+}
+.dashboardId{
+    color: rgb(180, 180, 180);
+}
+#missedMessagesContainer{
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 2px 0 rgb(0 0 0 / 5%);
+    background-color: white;
+    padding: 1vw;
+    border-radius: 10px;
+}
+#nbrMissedMessages{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+#missedMessages{
+    width: 100%;
+}
+table{
+    background-color: transparent;
+    width: 100%;
+    box-shadow: none;
+}
+#tableContainer{
+    width: 100%;
+    box-shadow: none;
+    max-height: 30vh;
+    overflow-y: auto;
+}
+#filter{
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 6vh;
+    padding-left: 1vh;
+    color: rgb(143, 143, 143);
+    background-color:whitesmoke;
+    border-radius: 4px;
+    padding: 0.5vw;
+    top: 0;
+    position: sticky;
+}
+
+#filterInput{
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+    margin-left: 1vw;
+    width: 100%;
+    height: 100%;
+    color: rgba(56, 56, 56, 0.603);
+}
+.row{
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.rowColumn{
+    padding: 1vw;
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 2px 0 rgb(0 0 0 / 5%);
+    border-radius: 10px;
+    margin-bottom: 3vh;
+}
+h2{
+    color: rgb(85, 85, 85) ;
+    margin: 0 !important;
+    align-self: flex-start;
+    font-size: 15px;
+}
+canvas:hover{
+    cursor: pointer;
+}
+::ng-deep mat-dialog-container{
+    padding:0 !important;
+}

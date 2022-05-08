@@ -1,0 +1,44 @@
+<div id="MainContainer">
+    <div id="CarouselContainer">
+        <div id="tabContainer" #tabContainer>
+            <div id="tabs">
+                <div id="tab1" class="tab" #tab1>
+                    <img src="../../assets/Images/LoginImage1.png">
+                    <div id="info">
+                        <h1>Communiquer</h1>
+                        <p>Communiquer avec le chatbot pour en savoir plus sur le système</p>
+                    </div>
+                </div>
+                <div id="tab2" class="tab" #tab2>
+                    <img src="../../assets/Images/LoginImage2.png">
+                    <div id="info">
+                        <h1>Tâches</h1>
+                        <p>Utiliser le chatbot pour exécuter des tâches automatiquement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="carouselNav">
+            <div class="control" [ngClass]="{'controlActive': tab1Selected}"
+                (click)="tab1Selected = true;scrolls(tab1)"></div>
+            <div class="control" [ngClass]="{'controlActive': !tab1Selected}"
+                (click)="tab1Selected = false;scrolls(tab2)"></div>
+        </div>
+    </div>
+    <div id="LoginContainer">
+        <img src="../../assets/Images/Logo2.png" id="logo">
+        <h1>CONNECTER</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <input id="username" placeholder="Nom d'utilisateur" type="text" [disabled]="loading" maxlength="50"
+                formControlName="username" matInput required>
+            <input placeholder="Mot de passe" id="password" type="password" [disabled]="loading"
+                formControlName="password" matInput required>
+            <button type="submit" id="signIn" [disabled]="loginForm.invalid">
+                <span *ngIf="!loading">Connecter</span>
+                <div id="loader" align="center">
+                    <mat-spinner *ngIf="loading" [diameter]="20"></mat-spinner>
+                </div>
+            </button>
+        </form>
+    </div>
+</div>

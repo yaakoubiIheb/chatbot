@@ -1,0 +1,164 @@
+*{box-sizing: border-box;font-size: small;}
+#Header{
+    width: 100vw;
+    height: 8vh;
+    padding: 0 2vw 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top:0;
+    border-bottom: 1px solid whitesmoke;
+    background-color: white;
+    z-index: +2;
+
+}
+#HeaderTitle h1{
+    font-weight: 500 !important;
+    margin : 0;
+    color:#3a3a3a;
+    font-size: 15px;
+    margin-left:18vw;
+}
+#HeaderContent{
+    width: 55vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+button{
+    overflow: hidden;
+}
+#MainContainer{
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 90vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw;
+}
+#BackgroundImage{
+    object-fit: cover;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -5;
+}
+#table{
+    width: 100%;
+    background-color: transparent;
+    border-collapse:separate;
+    border-spacing:0 15px;
+}
+#table tr:nth-child(1) th{
+    background-color: #fafafa;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    user-select: none;
+
+}
+tr{
+    //box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    background-color: white;
+}
+#table tr:hover{
+    cursor: pointer;
+}
+table tr td:first-child{
+    //border-left: 4px solid #aa61eb;
+}
+#paginator{
+    bottom: 0;
+    position: sticky;
+    background-color: transparent;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+.mat-paginator-range-actions{
+    display: initial !important;
+}
+#addFilterContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+    width: 90%;
+    justify-content: space-between;
+    margin-top: 5vh;
+}
+::ng-deep mat-dialog-container{
+    padding:0 !important;
+}
+#loader{
+    width: 25% ;
+}
+.displayed{
+
+}
+.notDisplayed{
+    display: none !important;
+}
+#filter{
+    display: flex;
+    margin: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    align-items: center;
+    width: 100%;
+    height: 8vh;
+    padding-left: 1vh;
+    color: rgb(143, 143, 143);
+    background-color:white;
+    //box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+#filterInput{
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+    margin-left: 1vw;
+    width: 100%;
+    height: 100%;
+    color: rgba(87, 87, 87, 0.603);
+}
+#filterIcon{
+    height: 100%;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(61, 61, 61);
+}
+.conversationRow{
+    background-color: #FED1DD;
+    padding: 0.5vmax;
+    border-radius: 5px;
+    color: #ec5b80;
+}
+.taskRow{
+    background-color: #C0EAFF;
+    padding: 0.5vmax;
+    border-radius: 5px;
+    color: #266B91;
+    width: 100%;
+}
+#header{
+    color: #464646;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-left: 5vw;
+}
+#addConversation{
+    color: #ec5b80;
+}
+#addTask{
+    color: #6F7FDC;
+}

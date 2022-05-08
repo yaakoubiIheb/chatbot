@@ -1,0 +1,144 @@
+*{box-sizing: border-box;}
+#MainContainer{
+    font-family:'cambria';
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+
+}
+#CarouselContainer{
+    background-color: rgb(154,181,207);
+    width: 60vw;
+    min-height: 100vh;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#CarouselContainer img{
+    width: 40vw;
+}
+#LoginContainer{
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10vh;
+}
+#LoginContainer h1{
+    color: rgb(87, 87, 87);
+    font-weight: bold;
+    margin-bottom: 4vh;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+}
+
+#signIn{
+    width: 30vmax;
+    padding: 10;
+    height: 40px;
+    border-radius: 50px;
+    border: 2px solid rgb(87, 87, 87);
+    color: rgb(87, 87, 87);
+    transition: all 0.3s ease;
+    background-color: whitesmoke;
+    margin-top: 4vh;
+}
+input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(66, 66, 66);
+    padding-top: 0.5vw;
+    padding-bottom : 0.5vw;
+    margin-bottom: 3vh;
+}
+input:focus{
+    outline: none;
+   
+}
+#signIn:hover{
+    background-color: rgb(87, 87, 87);
+    color: whitesmoke;
+    cursor: pointer;
+}
+#forgotPassword{
+    text-decoration: underline;
+    color: rgb(87, 87, 87);
+    margin-top: 2vh;
+}
+#forgotPassword:hover{
+    cursor: pointer;
+    color: black;
+}
+#CarouselContainer h1{
+    color: whitesmoke;
+    font-weight: bold;
+}
+#info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+#info p{
+    font-size: large;
+}
+.control{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(245, 245, 245, 0.493);
+    margin: 4px;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+.control:hover{
+    cursor: pointer;
+    width: 40px;
+}
+#carouselNav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controlActive{
+    width:40px;
+}
+#tabContainer{
+    width: 60px;
+    min-width: 60vw;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+#tabs{
+    width: 120vw;
+    min-width: 120vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tab{
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#logo{
+    width: 40vw;
+    margin-left: 3vw;
+    justify-self: flex-start ;
+    margin-bottom: 1vh;
+}

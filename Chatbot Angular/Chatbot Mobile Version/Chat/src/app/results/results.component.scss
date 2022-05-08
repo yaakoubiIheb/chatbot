@@ -1,0 +1,175 @@
+*{box-sizing: border-box !important;font-size: small;}
+#Header{
+    width: 100vw;
+    height: 8vh;
+    padding: 0 2vw 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top:0;
+    border-bottom: 1px solid whitesmoke;
+    background-color: white;
+    z-index: +2;
+
+}
+.mat-paginator-container{
+    display: initial !important;
+}
+#HeaderTitle h1{
+    font-weight: 500 !important;
+    margin : 0;
+    color:#3a3a3a;
+    font-size: 15px;
+    margin-left: 18vw;
+}
+#HeaderContent{
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+h2{
+    color: rgb(85, 85, 85) ;
+    margin: 0 !important;
+}
+.date{
+    font-size: smaller;
+    color: rgb(151, 151, 151) ;
+}
+#MainContainer{
+    width: 100vw;
+    min-height: 92vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+}
+#BackgroundImage{
+    object-fit: cover;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -5;
+}
+#empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#emptyImg{
+    width: 15vw;
+    margin-right: 2vw;
+}
+#empty h1{
+    font-weight: bold;
+    font-size: 3vw;
+    color: rgb(143, 143, 143);
+}
+.DataElement{
+    width: 95%;
+    //min-width: 400px;
+    margin: 0 1vw 1vw 1vw;
+    border-radius: 7.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.DataElementTask::-webkit-scrollbar {
+    width: 9px;
+    height : 9px;
+}
+.DataElementTask::-webkit-scrollbar-track {
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+
+.DataElementTask::-webkit-scrollbar-thumb {
+    background-color: rgb(175, 175, 175);
+    border-radius: 20px;
+    border: 3px solid rgb(175, 175, 175);
+}
+table:hover{
+    cursor: pointer;
+}
+.chart{
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 2px 0 rgb(0 0 0 / 5%);
+    background-color: white;
+
+}
+td{
+    white-space:nowrap;
+}
+::ng-deep mat-dialog-container{
+    padding:0 !important;
+}
+.action{
+    padding: 0 1.3vw 0 1.3vw;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+table{
+    padding: 0.5vw;
+    width: 95vw !important;
+}
+.action:hover{
+    cursor: pointer;
+}
+.DataElementInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5vw;
+    align-self: flex-start;
+    left: 0;
+}
+.chart:hover{
+    cursor: pointer;
+}
+canvas,table{
+    width: 200px;
+    height: 200px;
+}
+table th{
+    text-align: left;
+    color: rgb(105, 105, 105);
+    font-weight: 500;
+}
+table td{
+    border-bottom: 1px solid rgb(235, 235, 235);
+    padding: 0.5vw 0 0.5vw 0.2vw;
+}
+tr:nth-child(even) {
+    background: whitesmoke;
+}
+table tr td:first-child{
+    border-left: 3px solid #ffd84d;
+}
+#localData{
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vw;
+}
+h2{
+    color:#3a3a3a;
+    font-size: large;
+    margin: 0;
+}
+.DataElementTask{
+    width: 200px;
+    overflow: auto;
+    margin: 2vw;
+    background-color: white;
+    padding: 5vw;
+    border-radius: 5px;
+}

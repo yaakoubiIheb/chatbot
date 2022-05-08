@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Chatbot.Services.AdministratorService" CodeBehind="AdministratorService.svc.cs" %>

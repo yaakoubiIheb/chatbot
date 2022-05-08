@@ -1,0 +1,68 @@
+<!--<img id="BackgroundImage" src="../../assets/Images/Background1.svg">-->
+<div id="Header">
+  <div id="HeaderTitle">
+    <h1>Règles</h1>
+  </div>
+  <div id="HeaderContent">
+    <button id="addConversation" [ngClass]="tableLoaded?'displayed':'notDisplayed'" mat-stroked-button color="primary"
+      [routerLink]="['/regles/ajouterConversation']">
+      <span style="margin-right: 0.5vw;" class="material-icons">
+        chat
+      </span>
+    </button>
+    <button id="addTask" [ngClass]="tableLoaded?'displayed':'notDisplayed'" mat-stroked-button color="primary"
+      [routerLink]="['/regles/ajouterTache']">
+      <span style="margin-right: 0.5vw;" class="material-icons">
+        task
+      </span>
+    </button>
+  </div>
+</div>
+<div id="MainContainer">
+
+  <div id="filter" [ngClass]="tableLoaded?'displayed':'notDisplayed'">
+    <span id="filterIcon" class="material-icons-outlined">search</span>
+    <input id="filterInput" placeholder="Chercher..." type="text" matInput (keyup)="applyFilter($event)" #input
+      [(ngModel)]="value">
+  </div>
+  <table [ngClass]="tableLoaded?'displayed':'notDisplayed'" mat-table [dataSource]="dataSource" id="table" matSort>
+    <!-- Username Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Titre</th>
+      <td (click)="openDetailsDialog(row.title,row.ruleType)" mat-cell *matCellDef="let row"> {{row.title}} </td>
+    </ng-container>
+    <!-- Progress Column -->
+    <ng-container matColumnDef="ruleType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+      <td (click)="openDetailsDialog(row.title,row.ruleType)" mat-cell *matCellDef="let row">
+        <span [ngClass]="row.ruleType=='Conversation'?'conversationRow':'taskRow'">{{row.ruleType}}</span>
+      </td>
+    </ng-container>
+    <!--Action Column-->
+    <!--<ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let row" id="classBtns">
+        <button (click)="updateRule(row.title,row.ruleType)" mat-icon-button color="accent" aria-label="Modifier"
+          id="edit" [routerLink]="['/regles/modifierTache',row.title]">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <button (click)="deleteRule(row)" mat-icon-button color="warn" aria-label="Supprimer" id="delete">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>-->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">Aucune donnée Trouvée</td>
+    </tr>
+  </table>
+
+  <mat-paginator [ngClass]="tableLoaded?'displayed':'notDisplayed'" [pageSizeOptions]="[5, 10, 25, 100]"
+    showFirstLastButtons id="paginator"></mat-paginator>
+
+  <mat-progress-bar id="loader" *ngIf="!tableLoaded" mode="indeterminate"></mat-progress-bar>
+</div>

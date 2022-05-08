@@ -1,0 +1,57 @@
+#MainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+    background-color: white;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+}
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 1vh;
+}
+.row mat-form-field{
+    width:100%;
+}
+.row button{
+    margin-right: 1vw;
+    width:100%;
+}
+.row input:hover{
+    outline: none !important;
+}
+mat-form-field{
+    margin-right: 0.5vw;
+    margin-left: 0.5vw;
+}
+h1{
+    color: black;
+    font-weight: bold;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#title{
+    width: 100%;
+    margin-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(231, 231, 231);
+}
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: rgba(grey, 0.75) !important;
+  }

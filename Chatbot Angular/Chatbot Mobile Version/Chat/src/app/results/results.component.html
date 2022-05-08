@@ -1,0 +1,43 @@
+<div id="Header">
+    <div id="HeaderTitle">
+        <h1>Tâches exécutées</h1>
+    </div>
+    <div id="HeaderContent">
+    </div>
+</div>
+<div id="MainContainer">
+    <!--<img id="BackgroundImage" src="../../assets/Images/Background1.svg">-->
+    <div *ngIf="!localTasks || localTasks.length == 0" id="empty">
+        <img id="emptyImg" src="./assets/Images/Logo2.png">
+        <h1>Ajouter des tâches</h1>
+    </div>
+    <div *ngIf="localTasks" id="localData">
+        <div class="DataElement" *ngFor="let d of localTasks;let i = index">
+            <div class="DataElementInfo">
+                <div>
+                    <h2>{{d.ruleTitle}}</h2>
+                    <div class="date">{{d.date}}</div>
+                </div>
+                <mat-icon class="action" [matMenuTriggerFor]="actionMenu" aria-hidden="false">more_horiz</mat-icon>
+                <mat-menu #actionMenu="matMenu">
+                    <button (click)="deleteFromLocalTasks(d.ruleTitle)" mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        <span>Supprimer élément</span>
+                    </button>
+                </mat-menu>
+            </div>
+                <canvas height="5px" width="5px" (click)="openTaskDetailDialog(this.localStorageService.getLocalTasks(signedInUser.username)[i].data,d.type)"
+                *ngIf="d.type == 'statistique'" class="chart" baseChart [datasets]="d.data.dataSets"
+                [labels]="d.data.labels" [colors]="d.data.colors" [options]="d.data.options" [chartType]="d.data.type">
+            </canvas>
+            <table (click)="openTaskDetailDialog(this.localStorageService.getLocalTasks()[i].data,d.type)" *ngIf="d.type == 'matrice'">
+                <tr>
+                    <th *ngFor="let d of d.data[0] | keyvalue">{{d.key}}</th>
+                </tr>
+                <tr *ngFor="let d of d.data;let i = index">
+                    <td *ngFor="let e of d | keyvalue">{{e.value}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

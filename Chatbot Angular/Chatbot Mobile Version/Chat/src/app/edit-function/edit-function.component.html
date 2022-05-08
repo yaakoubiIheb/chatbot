@@ -1,0 +1,32 @@
+<div id="MainContainer">
+  <div id="title"><h1>Modifier Fonction</h1></div>
+  <form class="example-form" [formGroup]="editFunctionForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+          <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Titre</mat-label>
+              <input type="text" matInput placeholder="Ex. Chef Projet" formControlName="title" required>
+          </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Description</mat-label>
+          <input type="text" matInput placeholder="Ex. Superviser la progression du projet" formControlName="description">
+        </mat-form-field>
+      </div>
+      <div class="row">
+            <mat-form-field appearance="fill">
+              <mat-label>Permission</mat-label>
+              <mat-select name="fonction" formControlName="permission" required>
+                <mat-option *ngFor="let p of permissions" [value]="p.id">
+                  {{p.title}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+      </div>
+      <div class="row">
+        <button mat-dialog-close type="button" id="cancelBtn" mat-stroked-button color="warn">ANNULER</button>
+        <button mat-dialog-close type="submit" id="addBtn" mat-raised-button color="primary" [disabled]="editFunctionForm.invalid">MODIFIER</button>
+      </div>
+    </form>
+</div>
+<app-loading-screen *ngIf="loading"></app-loading-screen>

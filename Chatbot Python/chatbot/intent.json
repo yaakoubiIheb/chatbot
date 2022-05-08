@@ -1,0 +1,294 @@
+{
+    "intents": [
+        {
+            "tag": "pas de reponse",
+            "trigger": [
+                ""
+            ],
+            "responses": [
+                "Désolé, je ne vous comprends pas, veuillez contacter le responsable pour ajouter cette fonctionnalité",
+                "Veuillez me donner plus d'informations, veuillez contacter le responsable pour ajouter cette fonctionnalité",
+                "Je ne suis pas sûr de comprendre, veuillez contacter le responsable pour ajouter cette fonctionnalité"
+            ],
+            "type": "Conversation",
+            "methode": "",
+            "api": "",
+            "typeReponse": "",
+            "sequence": []
+        },
+        {
+            "tag": "Salutation",
+            "description": "",
+            "trigger": [
+                "Bonjour robin",
+                "Salut robin"
+            ],
+            "responses": [
+                "Bonjour",
+                "Salut, Comment puis-je vous aider?"
+            ],
+            "type": "Conversation"
+        },
+        {
+            "tag": "Fonctionnalités",
+            "description": "",
+            "trigger": [
+                "quelles sont vos fonctions",
+                "Que pouvez-vous faire"
+            ],
+            "responses": [
+                "Je peux vous aider à explorer davantage le système sur lequel vous travaillez",
+                "Je peux vous aider à répondre à vos questions sur le logiciel sur lequel vous travaillez",
+                "Je peux vous aider à exécuter des tâches"
+            ],
+            "type": "Conversation"
+        },
+        {
+            "tag": "Community Cast",
+            "description": "",
+            "trigger": [
+                "Afficher community cast"
+            ],
+            "type": "Tache",
+            "responseType": "matrice",
+            "api": "http://localhost:3000/table/2",
+            "methode": "GET",
+            "graphType": "line",
+            "sequence": null
+        },
+        {
+            "tag": "Affichage de tous les utilisateurs",
+            "description": "Permet d'afficher tous les utilisateurs qui utilisent le système \"Chatbot\"",
+            "trigger": [
+                "Afficher tous les utilisateurs de robin",
+                "Afficher les utilisateurs de chatbot"
+            ],
+            "type": "Tache",
+            "responseType": "matrice",
+            "api": "http://localhost:53661/Services/UserService.svc/getAllUsers",
+            "methode": "GET",
+            "graphType": "line",
+            "sequence": null
+        },
+        {
+            "tag": "Comment Ajouter Conversation",
+            "description": "Instructions étape par étape sur la façon d'ajouter une nouvelle conversation au chatbot",
+            "trigger": [
+                "Comment Ajouter une conversation"
+            ],
+            "responses": [
+                "Vous devez d'abord sélectionner \"Règles d'utilisation\" dans le menu;Puis à partir de l'en-tête, cliquez sur \"Ajouter conversation\";Enfin suivez et remplissez le formulaire qui s'affiche."
+            ],
+            "type": "Conversation"
+        },
+        {
+            "tag": "Test Saisie",
+            "description": "",
+            "trigger": [
+                "Tester saisie"
+            ],
+            "type": "Tache",
+            "responseType": "valeur",
+            "api": "localhost:3000/testControls",
+            "methode": "GET",
+            "graphType": "line",
+            "sequence": [
+                {
+                    "question": "Type?",
+                    "attribute": "type",
+                    "sequenceType": "options",
+                    "options": [
+                        {
+                            "message": "type1",
+                            "value": "type1"
+                        },
+                        {
+                            "message": "type2",
+                            "value": "type2"
+                        },
+                        {
+                            "message": "type3",
+                            "value": "type3"
+                        },
+                        {
+                            "message": "type4",
+                            "value": "type4"
+                        }
+                    ],
+                    "valueType": "unique",
+                    "controlType": "texte"
+                },
+                {
+                    "question": "texteUnique?",
+                    "attribute": "texteU",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "texte"
+                },
+                {
+                    "question": "TexteM?",
+                    "attribute": "texteM",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "multiple",
+                    "controlType": "texte"
+                },
+                {
+                    "question": "texte1?",
+                    "attribute": "Texte1",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "texte1"
+                },
+                {
+                    "question": "texte10?",
+                    "attribute": "texte10",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "texte10"
+                },
+                {
+                    "question": "texte50?",
+                    "attribute": "texte50",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "texte50"
+                },
+                {
+                    "question": "num?",
+                    "attribute": "num",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "numero"
+                },
+                {
+                    "question": "num1?",
+                    "attribute": "num1",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "numero1"
+                },
+                {
+                    "question": "num10?",
+                    "attribute": "num10",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "numero10"
+                },
+                {
+                    "question": "mot de passe?",
+                    "attribute": "password",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "mot de passe"
+                },
+                {
+                    "question": "date?",
+                    "attribute": "date",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "date"
+                },
+                {
+                    "question": "dateInterval?",
+                    "attribute": "dateI",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "multiple",
+                    "controlType": "intervalle de dates"
+                },
+                {
+                    "question": "email?",
+                    "attribute": "email",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "email"
+                }
+            ]
+        },
+        {
+            "tag": "comment réaliser des statistiques",
+            "description": "",
+            "trigger": [
+                "comment réaliser des statistiques"
+            ],
+            "responses": [
+                "accéder interface gestion statistiques"
+            ],
+            "type": "Conversation"
+        },
+        {
+            "tag": "statistique barre",
+            "description": "",
+            "trigger": [
+                "afficher statistique barre"
+            ],
+            "type": "Tache",
+            "responseType": "statistique",
+            "api": "http://localhost:3000/stat/1",
+            "methode": "GET",
+            "graphType": "bar",
+            "sequence": null
+        },
+        {
+            "tag": "Ajouter utilisateur",
+            "description": "Permet d'insérer un nouveau utilisateur dans la base de données",
+            "trigger": [
+                "Ajouter un nouveau utilisateur au système",
+                "insérer un nouveau utilisateur dans la base de données",
+                "ajouter un nouveau admininstrateur",
+                "ajouter un nouveau employee"
+            ],
+            "type": "Tache",
+            "responseType": "valeur",
+            "api": "http://localhost:3000/ajouterUtilisateur",
+            "methode": "POST",
+            "graphType": "line",
+            "sequence": [
+                {
+                    "question": "Type d'utilisateur?",
+                    "attribute": "type",
+                    "sequenceType": "options",
+                    "options": [
+                        {
+                            "message": "admininstrateur",
+                            "value": "admin"
+                        },
+                        {
+                            "message": "employee",
+                            "value": "emp"
+                        }
+                    ],
+                    "valueType": "unique",
+                    "controlType": "texte"
+                },
+                {
+                    "question": "Nom d'utilisateur?",
+                    "attribute": "username",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "unique",
+                    "controlType": "texte10"
+                },
+                {
+                    "question": "Adresse mail?",
+                    "attribute": "email",
+                    "sequenceType": "saisie",
+                    "options": [],
+                    "valueType": "multiple",
+                    "controlType": "email"
+                }
+            ]
+        }
+    ]
+}

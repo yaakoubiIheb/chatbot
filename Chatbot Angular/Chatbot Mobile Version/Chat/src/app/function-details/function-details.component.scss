@@ -1,0 +1,92 @@
+#MainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vw;
+    background-color: #fafafa;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+}
+#title{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2vh;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+h1{
+    color: black;
+    font-weight: bold;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#UserImage{
+    width: 3vmax;
+    height: 3vmax;
+    border-radius: 50px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: x-large;
+    padding: 1vw;
+}
+th{
+    color : rgb(182, 182, 182);
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+tr :nth-child(2){
+    padding-left: 3vw;
+}
+table .material-icons{
+    font-size: 20px;
+}
+#returnBtn{
+    width: 100%;
+    margin-top: 2vh;
+    color: white;
+    background-color: #F87F76;
+}
+#footer{
+    margin-top: 2vh;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid rgb(221, 221, 221);
+    padding-top: 1vh;
+}
+#footer div:hover{
+    cursor: pointer;
+}
+#update{
+    background-color: #ffe78f;
+    color: #e9b600;
+    padding: 4vw;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 2px 0 rgb(0 0 0 / 5%);
+
+}
+#delete{
+    background-color: rgb(255, 169, 169);
+    color: rgb(233, 16, 16);
+    padding: 4vw;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 2px 0 rgb(0 0 0 / 5%);
+
+}

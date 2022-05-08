@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Chatbot.Services.TriggerService" CodeBehind="TriggerService.svc.cs" %>

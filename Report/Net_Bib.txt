@@ -1,0 +1,30 @@
+[N1] http://www.prosoftinternational.com.tn/
+[N2] https://www.drift.com/learn/chatbot/why-are-chatbots-important/
+[N3] https://flow.ai/blog/kb-different-kinds-of-chatbots
+[N4] https://eternalsunshineoftheismind.wordpress.com/2013/02/22/v-model-advantages-disadvantages-usage/
+[N5] https://www.simplilearn.com/scrum-project-management-article
+[N6] https://www.guru99.com/what-is-sdlc-or-waterfall-model.html
+[N7] https://www.tutorialspoint.com/sdlc/sdlc_waterfall_model.htm
+[N8] https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-uml/
+[N9] https://www.usability.gov/how-to-and-tools/methods/use-cases.html
+[B1] https://www.reseaucerta.org/sites/default/files/uc-intro.pdf
+[N10] https://sparxsystems.com/resources/tutorials/uml/part1.html
+[N11] https://techterms.com/definition/windows_10
+[N12] https://angular.io/guide/architecture
+[N13] https://en.wikipedia.org/wiki/Python_(programming_language)
+[N14] https://en.wikipedia.org/wiki/TensorFlow
+[N15] https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf
+[N16] https://en.wikipedia.org/wiki/SQL_Server_Management_Studio
+[N17] https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)
+[N18] https://en.wikipedia.org/wiki/Microsoft_Visual_Studio
+[N19] https://en.wikipedia.org/wiki/Visual_Studio_Code
+[N20] https://en.wikipedia.org/wiki/Visual_Paradigm
+[N21] https://balsamiq.com/wireframes/desktop/docs/intro/
+[N22] https://ionic.io/resources/articles/what-is-apache-cordova
+[N23] https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm
+[N24] https://www.techopedia.com/definition/24649/three-tier-architecture
+[N25] https://www.testim.io/blog/unit-test-rest-api/
+
+تم إعداد هذا التقرير كجزء أخير من مشروع التخرج بهدف الحصول على دبلوم الترخيص التطبيقي في تكنولوجيا الحاسوب.
+تم إجراء التدريب داخل منظمة بروسوفت الدولية تهدف إلى تسهيل تطبيقاتها المالية من خلال متحدث آلي. لتنفيذ هذا المشروع ، استخدمنا لغة النمذجة الموحدة كلغة نمذجة و بيثون لبناء المتحدث لآلي و أنغيلار للواجهة الأمامية و مؤسسة اتصالات ويندوس للواجهة الخلفية مع قاعدة بيانات مايكروسوفت كنظام إدارة قواعد البيانات
+,  

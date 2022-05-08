@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+#MainContainer{
+    width: fit-content;
+    background-color: white;
+    height : fit-content;
+    padding-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    background-color: rgb(207, 24, 24);
+    color: whitesmoke;
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+p{
+    padding-right: 3vw;
+    padding-left: 3vw;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    color: red;
+    font-weight: 500;
+}

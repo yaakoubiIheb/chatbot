@@ -1,0 +1,265 @@
+<div id="Header">
+  <div id="HeaderTitle">
+    <h1>Ajouter une tache</h1>
+  </div>
+  <div id="HeaderContent">
+    <button [routerLink]="['/regles']" color="warn" mat-button mat-stroked-button id="cancel">
+      <span style="margin-right: 1vmax;" class="material-icons-outlined">
+        keyboard_return
+      </span>
+      <span>Annuler</span>
+    </button>
+  </div>
+</div>
+<div id="MainContainer">
+  <mat-horizontal-stepper [ngClass]="loading?'notDisplayed':'displayed'" mat-dialog-content labelPosition="bottom"
+    linear #stepper>
+    <!-------------Title------------->
+    <mat-step [editable]="isEditable" [stepControl]="titleFormGroup">
+      <ng-template matStepLabel>Titre</ng-template>
+      <form [formGroup]="titleFormGroup">
+        <div class="row">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Titre</mat-label>
+            <input type="text" matInput placeholder="Ex. Salutation" formControlName="title" maxlength="50" required>
+            <mat-hint *ngIf="titleFormGroup.controls.title.errors?.confirmedValidator">Titre existe déjà</mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea type="text" style="height:30vh;resize: none;" matInput placeholder="Ex. Bonjour" formControlName="description"></textarea>
+            <mat-hint>Optionnel</mat-hint>          
+          </mat-form-field>
+        </div>
+
+        <div align="end"><button mat-button matStepperNext mat-basic-button color="primary">Suivant</button></div>
+      </form>
+    </mat-step>
+    <!-------------Functions------------>
+    <mat-step [editable]="isEditable">
+      <ng-template matStepLabel>Fonctions</ng-template>
+        <div id="FunctionsContainer" *ngIf="functions">
+          <h1 style="margin-bottom: 2vh;">Fonctions</h1>
+          <div id="Functions">
+            <div id="filter">
+              <input id="filterInput" placeholder="Chercher..." #input (keyup)="applyFilter($event)" type="text">
+              <span id="filterIcon" class="material-icons-outlined">search</span>
+            </div>
+            <div class="mat-elevation-z8" id="tableContainer">
+              <table mat-table [dataSource]="dataSource" id="table" matSort>
+                <ng-container matColumnDef="select">
+                  <th mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+                    </mat-checkbox>
+                  </th>
+                  <td mat-cell *matCellDef="let row">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+                    </mat-checkbox>
+                  </td>
+                </ng-container>
+                <!-- Title Column -->
+                <ng-container matColumnDef="title">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Titre</th>
+                  <td mat-cell *matCellDef="let row"> {{row.title}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">Aucune donnée Trouvée</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div align="end">
+          <button type="button" mat-button matStepperPrevious mat-basic-button color="warn">Précédent</button>
+          <button mat-button matStepperNext mat-basic-button color="primary">Suivant</button>
+        </div>
+    </mat-step>
+    <!-------------Triggers------------->
+    <mat-step [editable]="isEditable" [stepControl]="triggersFormGroup">
+      <ng-template matStepLabel>Déclencheurs</ng-template>
+      <form [formGroup]="triggersFormGroup">
+        <div formArrayName="triggers">
+          <div *ngFor="let t of triggersFormGroup['controls'].triggers['controls'];let i = index">
+            <div class="row" formGroupName="{{i}}">
+              <mat-form-field appearance="outline">
+                <mat-label>Déclencheur {{i+1}}</mat-label>
+                <input type="text" matInput placeholder="Ex. Salut" formControlName="message" required>
+              </mat-form-field>
+              <span *ngIf="triggersFormGroup['controls'].triggers['controls'].length >1" (click)="removeTrigger(i)"
+                class="material-icons-outlined removeIcon">remove_circle</span>
+            </div>
+          </div>
+          <div><button type="button" class="addBtn" (click)="addTrigger()" mat-button mat-raised-button
+              color="accent">Ajouter déclencheur</button></div>
+        </div>
+        <div class="steppers">
+          <button type="button" mat-button matStepperPrevious mat-basic-button color="warn">Précédent</button>
+          <button type="submit" mat-button matStepperNext mat-basic-button color="primary">Suivant</button>
+        </div>
+      </form>
+    </mat-step>
+    <!-------------API Details------------->
+    <mat-step [editable]="isEditable" [stepControl]="apiFormGroup">
+      <ng-template matStepLabel>API</ng-template>
+      <form [formGroup]="apiFormGroup">
+        <div class="row">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>API</mat-label>
+            <input type="text" matInput placeholder="Ex. http://apiExemple.com" formControlName="api" required>
+          </mat-form-field>
+        </div>
+        <div class="row" id="apiType">
+          <mat-form-field appearance="fill">
+            <mat-label>Méthode</mat-label>
+            <mat-select formControlName="method" required>
+              <mat-option value="GET">GET</mat-option>
+              <mat-option value="POST">POST</mat-option>
+              <mat-option value="PUT">PUT</mat-option>
+              <mat-option value="DELETE">DELETE</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Type de Réponse</mat-label>
+            <mat-select formControlName="responseType" required>
+              <mat-option value="aucun" selected>Aucun</mat-option>
+              <mat-option value="matrice">matrice</mat-option>
+              <mat-option value="statistique">Statistique</mat-option>
+              <mat-option value="valeur">Valeur</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button type="button"
+            (click)="executeTask(this.apiFormGroup.value['api'],this.apiFormGroup.value['method'],this.apiFormGroup.value['responseType'])"
+            *ngIf="this.apiFormGroup.value['responseType']=='statistique' || this.apiFormGroup.value['responseType']=='matrice'"
+            mat-button mat-stroked-button color="primary">Aperçu</button>
+        </div>
+        <div class="row" *ngIf="this.apiFormGroup.value['responseType']=='statistique'">
+          <mat-form-field appearance="fill">
+            <mat-label>Type de statistique</mat-label>
+            <mat-select formControlName="graphType" required>
+              <mat-option value="line" selected>Ligne</mat-option>
+              <mat-option value="bar">Barre</mat-option>
+              <mat-option value="horizontalBar">Barre horizontale</mat-option>
+              <mat-option value="doughnut">Donut</mat-option>
+              <mat-option value="radar">Radar</mat-option>
+              <mat-option value="polarArea">Zone plaire</mat-option>
+              <mat-option value="pie">Tarte</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-slide-toggle [(ngModel)]="hasAttributes" formControlName="hasAttributes">Contient des attributs
+          </mat-slide-toggle>
+        </div>
+        <div class="steppers">
+          <button type="button" mat-button matStepperPrevious mat-basic-button color="warn">Précédent</button>
+          <button type="submit" mat-button matStepperNext mat-basic-button color="primary">Suivant</button>
+        </div>
+      </form>
+    </mat-step>
+    <!-------------Sequnece------------->
+    <mat-step *ngIf="hasAttributes" [stepControl]="sequenceMessagesFormGroup" [editable]="isEditable">
+      <ng-template matStepLabel>Séquence</ng-template>
+      <form [formGroup]="sequenceMessagesFormGroup">
+        <div formArrayName="sequences">
+          <fieldset *ngFor="let s of sequenceMessagesFormGroup['controls'].sequences['controls'];let i = index">
+            <legend>Message de Séquence</legend>
+            <div formGroupName="{{i}}" class="sequenceQuestion">
+              <div class="row">
+                <mat-form-field appearance="fill">
+                  <mat-label>Type de message de Séquence</mat-label>
+                  <mat-select name="sequenceType" (selectionChange)="sequenceValidators()"
+                    formControlName="sequenceType" #sequenceType required>
+                    <mat-option value="saisie" selected>Saisie</mat-option>
+                    <mat-option value="options">Options</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Attribut</mat-label>
+                  <input type="text" matInput placeholder="EX. Nom" formControlName="sequenceAttribute" name="attribut"
+                    required>
+                </mat-form-field>
+              </div>
+              <div class=row>
+                <mat-form-field appearance="outline">
+                  <mat-label>la question pour obtenir la valeur</mat-label>
+                  <input type="text" matInput placeholder="Ex. Salut" formControlName="message" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="sequenceType.value == 'saisie'">
+                  <mat-label>Type de Valeur</mat-label>
+                  <mat-select formControlName="valueType" required>
+                    <mat-option value="unique" selected>valeur unique</mat-option>
+                    <mat-option value="multiple">valeurs multiple</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="sequenceType.value == 'saisie'">
+                  <mat-label>Type de contrôle</mat-label>
+                  <mat-select formControlName="controlType" required>
+                    <mat-option value="texte" selected>Texte</mat-option>
+                    <mat-option value="texte1" selected>Charactère</mat-option>
+                    <mat-option value="texte10" selected>Texte(10)</mat-option>
+                    <mat-option value="texte50" selected>Texte(50)</mat-option>
+                    <mat-option value="numero">Numéro</mat-option>
+                    <!--<mat-option value="mot de passe">mot de passe</mat-option>-->
+                    <mat-option value="date">date</mat-option>
+                    <mat-option value="email">Adresse e-mail</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <span *ngIf="sequenceMessagesFormGroup['controls'].sequences['controls'].length >1"
+                  (click)="removeSequenceMessage(i)" class="material-icons-outlined removeIcon">remove_circle</span>
+              </div>
+              <!------------------Options----------------------->
+              <div *ngIf="sequenceType.value == 'options'" id="optionsContainer" class="options" #optionsTemplate>
+                <div formArrayName="options">
+                  <div *ngFor="let o of s['controls'].options['controls'];let y = index;trackBy:customTrackBy">
+                    <div formGroupName="{{y}}" class="row">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Option {{y+1}}</mat-label>
+                        <input type="text" matInput placeholder="Ex. Salut" formControlName="option">
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>valeur de l'option {{y+1}}</mat-label>
+                        <input type="text" matInput placeholder="Ex. Salut" formControlName="optionAttribute">
+                      </mat-form-field>
+                      <span *ngIf="s['controls'].options['controls'].length > 1" (click)="removeOption(i,y)"
+                        class="material-icons-outlined removeIcon">remove_circle</span>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="addBtn" (click)="addOption(i)" mat-button mat-raised-button
+                  color="primary">Ajouter option</button>
+              </div>
+              <!-------------------/Options--------------->
+            </div>
+          </fieldset>
+        </div>
+      </form>
+      <div><button type="button" class="addBtn" (click)="addSequenceMessage();sequenceValidators();" mat-button mat-raised-button
+          color="accent">Ajouter message de séquence</button></div>
+      <div align="end">
+        <button type="button" mat-button matStepperPrevious mat-basic-button color="warn">Précédent</button>
+        <button type="submit" (click)="sequenceValidators();" mat-button matStepperNext mat-basic-button color="primary">Suivant</button>
+      </div>
+    </mat-step>
+    <!-------------Validate and Submit------------->
+    <mat-step>
+      <ng-template matStepLabel>Terminer</ng-template>
+      <div align="start">
+        <button type="submit" (click)="onSubmit()" id="addRuleBtn" mat-button mat-raised-button color="primary">Ajouter
+          tâche</button>
+      </div>
+      <div align="end">
+        <button type="button" mat-button matStepperPrevious mat-basic-button color="warn">Précédent</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+<app-loading-screen *ngIf="loading"></app-loading-screen>

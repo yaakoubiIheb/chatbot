@@ -1,0 +1,111 @@
+#MainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+}
+#header{
+    width: 80%;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#title{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#description{
+    color: rgb(165, 165, 165);
+    margin-bottom: 1vh;
+}
+#type{
+    padding: 0.5vh 3vw 0.5vh 3vw;
+    border-radius: 5px;
+    color:#ec5b80;
+    background-color: #FED1DD;
+    margin-bottom: 1vh;
+    font-weight: 500;
+}
+#returnBtn{
+    margin-top: 5vh;
+    align-self: flex-end;
+    padding-right: 3vw;
+    padding-left: 3vw;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+}
+#accordionContainer{
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 1vw;
+    min-width: 70vw;
+}
+mat-accordion{
+    min-width: 50vw;
+    margin-top: 2vh;
+}
+mat-expansion-panel{
+    background-color: #fafafa;
+}
+mat-expansion-panel-header:hover{
+    background-color: transparent !important;
+}
+.detailsTitle{
+    color: rgb(161, 161, 161);
+    margin-right: 2vw;
+    font-weight: 400;
+    font-size: smaller;
+}
+#footer{
+    margin-top: 2vh;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid rgb(221, 221, 221);
+    padding-top: 1vh;
+}
+#footer div:hover{
+    cursor: pointer;
+}
+#update{
+    background-color: #ffe78f;
+    color: #e9b600;
+    padding: 0.8vw;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 2px 0 rgb(0 0 0 / 5%);
+
+}
+#delete{
+    background-color: rgb(255, 169, 169);
+    color: rgb(233, 16, 16);
+    padding: 0.8vw;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 2px 0 rgb(0 0 0 / 5%);
+
+}
+#spinnerContainer{
+    padding : 1vw;
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mat-dialog-title{
+    font : inherit;
+    margin: 0;
+}

@@ -1,0 +1,65 @@
+<div id="Header">
+  <div id="HeaderTitle">
+    <h1 *ngIf="ruleTitle">Détails conversation</h1>
+  </div>
+  <div id="HeaderContent">
+    <button id="addBtn"  color="warn" mat-stroked-button
+    [routerLink]="['/regles']">
+      <span style="margin-right: 0.5vw;" class="material-icons">
+        keyboard_return
+      </span>
+    </button>
+  </div>
+</div>
+<div id="MainContainer" *ngIf="conversation">
+    <div id="header" mat-dialog-title>
+      <h1 id="title" align="center">{{conversation.title}}</h1>
+      <div id="description" align="center">{{conversation.description}}</div>
+      <div id="type" align="center">{{conversation.ruleType}}</div>
+    </div>
+    <div id="accordionContainer">
+    <mat-accordion *ngIf="conversation" class="example-headers-align">
+      <!--------Triggers---------->
+      <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Déclencheurs</mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item *ngFor="let t of conversation.triggers">
+            <div>{{t.message}}</div>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+        <!--------Responses---------->
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>Réponses</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list>
+              <mat-list-item *ngFor="let r of conversation.conversationResponses">
+                <div>{{r.response}}</div>
+                <mat-divider></mat-divider>
+              </mat-list-item>
+            </mat-list>
+          </mat-expansion-panel>
+      <!--------Fonctions------->
+      <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Fonctions</mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item *ngFor="let f of functions">
+            <div>{{f.title}}</div>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+    <!--<button id="returnBtn" mat-dialog-close mat-raised-button color="accent">Retourner</button>-->
+    <mat-dialog-actions id="footer">
+      <div mat-ripple mat-dialog-close id="update" [routerLink]="['/regles/modifierConversation',conversation.title]"><mat-icon>settings</mat-icon></div>
+      <div mat-ripple mat-dialog-close id="delete" (click)="openDeleteConversationDialog(conversation)"><mat-icon>delete</mat-icon></div>
+    </mat-dialog-actions>
+  </div>

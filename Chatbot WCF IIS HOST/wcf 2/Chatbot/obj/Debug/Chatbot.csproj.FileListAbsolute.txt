@@ -1,0 +1,107 @@
+C:\Users\tun18\source\repos\Chatbot\Chatbot\bin\Chatbot.dll.config
+C:\Users\tun18\source\repos\Chatbot\Chatbot\bin\Chatbot.dll
+C:\Users\tun18\source\repos\Chatbot\Chatbot\bin\Chatbot.pdb
+C:\Users\tun18\source\repos\Chatbot\Chatbot\obj\Debug\Chatbot.csprojAssemblyReference.cache
+C:\Users\tun18\source\repos\Chatbot\Chatbot\obj\Debug\Chatbot.csproj.CoreCompileInputs.cache
+C:\Users\tun18\source\repos\Chatbot\Chatbot\obj\Debug\Chatbot.dll
+C:\Users\tun18\source\repos\Chatbot\Chatbot\obj\Debug\Chatbot.pdb
+C:\Users\21651\Desktop\wcf\Chatbot\Chatbot\bin\Chatbot.dll.config
+C:\Users\21651\Desktop\wcf\Chatbot\Chatbot\bin\Chatbot.dll
+C:\Users\21651\Desktop\wcf\Chatbot\Chatbot\bin\Chatbot.pdb
+C:\Users\21651\Desktop\wcf\Chatbot\Chatbot\obj\Debug\Chatbot.csprojAssemblyReference.cache
+C:\Users\21651\Desktop\wcf\Chatbot\Chatbot\obj\Debug\Chatbot.csproj.CoreCompileInputs.cache
+C:\Users\21651\Desktop\wcf\Chatbot\Chatbot\obj\Debug\Chatbot.dll
+C:\Users\21651\Desktop\wcf\Chatbot\Chatbot\obj\Debug\Chatbot.pdb
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Chatbot.dll.config
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Chatbot.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Chatbot.pdb
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\obj\Debug\Chatbot.csprojAssemblyReference.cache
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\obj\Debug\Chatbot.csproj.CoreCompileInputs.cache
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\obj\Debug\Chatbot.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\obj\Debug\Chatbot.pdb
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Newtonsoft.Json.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Newtonsoft.Json.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\obj\Debug\Chatbot.csproj.CopyComplete
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.Helpers.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.Mvc.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.Razor.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.WebPages.Deployment.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.WebPages.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.WebPages.Razor.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.Helpers.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.Mvc.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.Razor.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.WebPages.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.WebPages.Deployment.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf\Chatbot\Chatbot\bin\System.Web.WebPages.Razor.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Chatbot.dll.config
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Chatbot.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Chatbot.pdb
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Newtonsoft.Json.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.Helpers.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.Mvc.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.Razor.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.WebPages.Deployment.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.WebPages.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.WebPages.Razor.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\Newtonsoft.Json.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.Helpers.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.Mvc.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.Razor.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.WebPages.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.WebPages.Deployment.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\bin\System.Web.WebPages.Razor.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\obj\Debug\Chatbot.csprojAssemblyReference.cache
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\obj\Debug\Chatbot.csproj.CoreCompileInputs.cache
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\obj\Debug\Chatbot.csproj.CopyComplete
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\obj\Debug\Chatbot.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\wcf 2\Chatbot\obj\Debug\Chatbot.pdb
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Chatbot.dll.config
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Chatbot.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Chatbot.pdb
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Newtonsoft.Json.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.Helpers.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.Mvc.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.Razor.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.WebPages.Deployment.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.WebPages.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.WebPages.Razor.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\Newtonsoft.Json.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.Helpers.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.Mvc.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.Razor.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.WebPages.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.WebPages.Deployment.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\bin\System.Web.WebPages.Razor.xml
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\obj\Debug\Chatbot.csprojAssemblyReference.cache
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\obj\Debug\Chatbot.csproj.CoreCompileInputs.cache
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\obj\Debug\Chatbot.csproj.CopyComplete
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\obj\Debug\Chatbot.dll
+C:\Users\tun18\Desktop\OpenNot\YassineIset\DSI32\PFE\WCF(Services)\Wcf Host Test\wcf 2\Chatbot\obj\Debug\Chatbot.pdb
